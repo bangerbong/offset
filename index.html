@@ -3,8 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OFF SET | Home</title>
+    <title>OFFSET | Home</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific clean styles for this page */
+        .hero-title {
+            font-size: 10vw;
+            line-height: 0.9;
+            margin-bottom: 20px;
+        }
+        .clean-image {
+            width: 100%;
+            height: auto;
+            border: 1px solid #333; /* Thin, clean border */
+            margin: 40px 0;
+            display: block;
+        }
+        .section-header {
+            border-bottom: 2px solid black;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
     <div class="noise"></div>
@@ -20,30 +42,38 @@
     </nav>
 
     <header class="hero">
-        <h1 class="parallax-text" style="z-index: 1;">VISUAL<br>NOISE</h1>
-        <p class="scroll-fade-up" style="margin-top: 20px; font-size: 1.5rem; letter-spacing: 2px;">Issue 01 — September</p>
+        <p class="scroll-fade-up" style="font-weight: bold; margin-bottom: 10px;">VOL. 01 — SEPTEMBER ISSUE</p>
+        <h1 class="parallax-text hero-title">VISUAL<br>CULTURE</h1>
+        <div class="scroll-fade-up" style="margin-top: 30px;">
+            <a href="blog.html" style="color: black; text-decoration: none; border-bottom: 2px solid black; padding-bottom: 5px; font-weight: bold;">EXPLORE THE ISSUE</a>
+        </div>
     </header>
 
     <div class="container">
-        <h2 class="scroll-slide-left" style="font-size: 3rem; margin-bottom: 50px; font-family: var(--font-head); text-transform: uppercase;">
-            BREAK THE<br>GRID
-        </h2>
-
-        <img src="https://placehold.co/800x500/111/fff?text=EDITORIAL+IMAGE" 
-             class="editorial-img scroll-fade-up scattered tilt-left">
-
-        <p class="scroll-fade-up" style="font-size: 1.5rem; column-count: 2; column-gap: 40px; margin-top: 40px;">
-            We are moving away from clean lines. The future of web design is chaotic, textured, and loud. Embrace the imperfections. This issue explores the return of brutalism in digital spaces.
-        </p>
-
-        <img src="https://placehold.co/800x400/ff3c00/fff?text=RAW+TEXTURE" 
-             class="editorial-img scroll-scale scattered tilt-right">
         
-        <div style="text-align: center; margin-top: 100px;">
-            <a href="blog.html" class="scroll-fade-up" style="font-size: 2rem; color: black; font-weight: bold; text-decoration: none; border-bottom: 3px solid var(--accent);">
-                READ LATEST STORIES &rarr;
-            </a>
+        <h2 class="section-header scroll-slide-left">Featured Stories</h2>
+
+        <img src="https://placehold.co/1000x600/111/fff?text=MODERN+DESIGN" 
+             class="clean-image scroll-fade-up">
+
+        <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="font-size: 2rem; margin-bottom: 20px;">The New Standard</h3>
+                <p style="font-size: 1.2rem; line-height: 1.6;">
+                    Design is moving towards clarity and purpose. We explore how modern typography creates meaning without the need for excess decoration.
+                </p>
+            </div>
+            <div style="flex: 1; min-width: 300px;">
+                <img src="https://placehold.co/600x400/333/fff?text=MINIMALISM" 
+                     class="clean-image scroll-scale">
+            </div>
         </div>
+
+        <div style="text-align: center; margin-top: 80px;">
+            <h2 style="font-size: 3rem; margin-bottom: 40px;">LATEST READS</h2>
+            <a href="blog.html" style="background: black; color: white; padding: 15px 40px; text-decoration: none; font-weight: bold; text-transform: uppercase;">View All Articles</a>
+        </div>
+
     </div>
     
     <footer>
