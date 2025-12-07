@@ -1,0 +1,117 @@
+/* style.css */
+:root {
+    --bg-color: #e8e8e3;
+    --text-color: #111;
+    --accent: #ff3c00;
+    --font-head: 'Impact', 'Arial Black', sans-serif;
+    --font-body: 'Helvetica', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    overflow-x: hidden; /* Prevent side-scrolling from animations */
+}
+
+/* Noise Texture Overlay */
+.noise {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0; width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    z-index: 100;
+    mix-blend-mode: difference;
+    color: white;
+}
+
+.logo { font-family: var(--font-head); font-size: 1.5rem; text-decoration: none; color: white; text-transform: uppercase; }
+.menu a { margin-left: 20px; text-decoration: none; color: white; font-weight: bold; text-transform: uppercase; }
+
+/* --- SCROLL ANIMATION CLASSES --- */
+
+/* 1. Fade Up: Moves from down to up */
+.scroll-fade-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* 2. Slide In: Comes from the side */
+.scroll-slide-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1s ease-out;
+}
+
+/* 3. Scale Up: Grows from small to normal */
+.scroll-scale {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s ease-out;
+}
+
+/* The 'active' class triggers the animation */
+.active {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* --- Layouts --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-family: var(--font-head);
+    font-size: 12vw;
+    line-height: 0.85;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+/* Image styling */
+.editorial-img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%) contrast(1.2);
+    transition: 0.5s;
+    margin: 40px 0;
+}
+
+.editorial-img:hover {
+    filter: grayscale(0%);
+}
+
+/* Footer */
+footer {
+    padding: 50px;
+    border-top: 2px solid #000;
+    margin-top: 50px;
+    text-align: center;
+    font-family: var(--font-head);
+}
