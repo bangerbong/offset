@@ -156,4 +156,126 @@ h1, h2 {
 
 /* Animations */
 .scroll-fade-up { opacity: 0; transform: translateY(50px); transition: 1s ease; }
+.active { opacity: 1; transform: translateY(0); }    z-index: 1000;
+    background: white; /* Solid white bar */
+    border-bottom: 2px solid black;
+}
+
+.logo { 
+    font-family: var(--font-head); 
+    font-size: 1.5rem; 
+    text-decoration: none; 
+    color: black; 
+    text-transform: uppercase; 
+}
+
+.menu a { 
+    margin-left: 30px; 
+    text-decoration: none; 
+    color: black; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    font-size: 0.9rem; 
+}
+
+.menu a:hover { color: var(--accent); }
+
+/* --- GLOBAL LAYOUT --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 40px 20px; /* Top padding clears the fixed nav */
+}
+
+h1, h2 {
+    font-family: var(--font-head);
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 0.9;
+}
+
+/* --- IMAGE SPACES (The "Space for Image Everywhere" feature) --- */
+.big-image-slot {
+    width: 100%;
+    height: 70vh; /* Huge image area */
+    background-color: #eee; /* Placeholder gray */
+    object-fit: cover;
+    margin: 30px 0;
+    border: 2px solid black;
+    display: block;
+}
+
+.grid-image-slot {
+    width: 100%;
+    height: 400px;
+    background-color: #eee;
+    object-fit: cover;
+    border: 2px solid black;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.grid-image-slot:hover {
+    filter: brightness(0.9);
+}
+
+/* --- ABOUT PAGE SPLIT (Restored) --- */
+.about-split {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    padding-top: 80px; /* Clear Nav */
+}
+
+.about-img {
+    flex: 1;
+    min-width: 400px;
+    min-height: 80vh;
+    background: #000;
+    object-fit: cover;
+    border-right: 2px solid black;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- CONTACT PAGE (Restored) --- */
+.contact-hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.social-link {
+    font-size: 3rem;
+    font-family: var(--font-head);
+    color: black;
+    text-decoration: none;
+    margin: 10px 0;
+    display: block;
+    transition: 0.2s;
+}
+
+.social-link:hover { color: var(--accent); letter-spacing: 2px; }
+
+/* --- BLOG GRID --- */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Animations */
+.scroll-fade-up { opacity: 0; transform: translateY(50px); transition: 1s ease; }
 .active { opacity: 1; transform: translateY(0); }
