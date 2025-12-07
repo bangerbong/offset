@@ -1,12 +1,10 @@
-/* =========================================
-   1. GLOBAL VARIABLES & RESET
-   ========================================= */
+/* style.css - THE MODERN GALLERY LOOK */
 :root {
-    --bg-color: #0a0a0a; /* Dark "Cinematic" Background */
-    --text-color: #f4f4f0; /* Off-white text */
-    --accent: #ff3c00; /* Edgy Red */
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --accent: #ff3c00; /* Editorial Red */
     --font-head: 'Impact', 'Arial Black', sans-serif;
-    --font-body: 'Helvetica', sans-serif;
+    --font-body: 'Helvetica', 'Arial', sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -17,168 +15,145 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-body);
-    overflow-x: hidden;
 }
 
-/* Noise Texture (Adds the 'vintage' film grain look) */
+/* Noise Texture (Keep it subtle) */
 .noise {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     background: url('https://grainy-gradients.vercel.app/noise.svg');
-    opacity: 0.08;
+    opacity: 0.05;
     pointer-events: none;
     z-index: 999;
 }
 
-/* =========================================
-   2. NAVIGATION (FIXED & ALWAYS VISIBLE)
-   ========================================= */
+/* --- NAVIGATION (Clean & Fixed) --- */
 nav {
-    position: fixed; /* LOCKS IT TO THE SCREEN */
-    top: 0; 
-    width: 100%;
+    position: fixed;
+    top: 0; width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 30px 50px;
-    z-index: 9999; /* Ensures it is ABOVE the images */
-    mix-blend-mode: difference; /* Inverts colors so you can see it on any image */
+    padding: 20px 40px;
+    z-index: 1000;
+    background: white; /* Solid white bar */
+    border-bottom: 2px solid black;
 }
 
-.logo-text { 
+.logo { 
     font-family: var(--font-head); 
     font-size: 1.5rem; 
     text-decoration: none; 
-    color: white; 
+    color: black; 
     text-transform: uppercase; 
-    letter-spacing: 2px;
 }
 
 .menu a { 
     margin-left: 30px; 
     text-decoration: none; 
-    color: white; 
+    color: black; 
     font-weight: bold; 
     text-transform: uppercase; 
     font-size: 0.9rem; 
-    letter-spacing: 1px;
 }
 
-.menu a:hover { 
-    color: var(--accent); 
-    text-decoration: line-through;
+.menu a:hover { color: var(--accent); }
+
+/* --- GLOBAL LAYOUT --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 40px 20px; /* Top padding clears the fixed nav */
 }
 
-/* =========================================
-   3. HERO SECTION (FULL SCREEN)
-   ========================================= */
-.hero-fullscreen {
-    height: 100vh; /* Takes up 100% of the screen height */
+h1, h2 {
+    font-family: var(--font-head);
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 0.9;
+}
+
+/* --- IMAGE SPACES (The "Space for Image Everywhere" feature) --- */
+.big-image-slot {
     width: 100%;
+    height: 70vh; /* Huge image area */
+    background-color: #eee; /* Placeholder gray */
+    object-fit: cover;
+    margin: 30px 0;
+    border: 2px solid black;
+    display: block;
+}
+
+.grid-image-slot {
+    width: 100%;
+    height: 400px;
+    background-color: #eee;
+    object-fit: cover;
+    border: 2px solid black;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.grid-image-slot:hover {
+    filter: brightness(0.9);
+}
+
+/* --- ABOUT PAGE SPLIT (Restored) --- */
+.about-split {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    padding-top: 80px; /* Clear Nav */
+}
+
+.about-img {
+    flex: 1;
+    min-width: 400px;
+    min-height: 80vh;
+    background: #000;
+    object-fit: cover;
+    border-right: 2px solid black;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- CONTACT PAGE (Restored) --- */
+.contact-hero {
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
-    
-    /* BACKGROUND IMAGE SETUP */
-    background-image: url('landing.jpg'); /* Loads your big image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    text-align: center;
+    padding-top: 60px;
 }
 
-/* Dark overlay to make the logo pop */
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.3); 
-}
-
-.hero-logo-img {
-    width: 60vw; /* Huge Logo */
-    max-width: 600px;
-    height: auto;
-    z-index: 2; 
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
-    transition: transform 0.5s ease;
-}
-
-.hero-logo-img:hover {
-    transform: scale(1.02); 
-}
-
-/* =========================================
-   4. CONTENT LAYOUT
-   ========================================= */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 100px 20px;
-}
-
-h2 {
+.social-link {
+    font-size: 3rem;
     font-family: var(--font-head);
-    font-size: 4rem;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-    border-bottom: 1px solid #333;
-    padding-bottom: 20px;
-    color: #fff;
+    color: black;
+    text-decoration: none;
+    margin: 10px 0;
+    display: block;
+    transition: 0.2s;
 }
 
-h3 {
-    font-family: var(--font-head);
-    text-transform: uppercase;
-}
+.social-link:hover { color: var(--accent); letter-spacing: 2px; }
 
-/* =========================================
-   5. CARDS & GRID
-   ========================================= */
-.clean-grid {
+/* --- BLOG GRID --- */
+.blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 40px;
+    margin-top: 40px;
 }
 
-.clean-card {
-    transition: 0.3s;
-}
-
-.card-img { 
-    width: 100%; 
-    height: 350px; 
-    object-fit: cover; 
-    filter: grayscale(100%); 
-    transition: 0.5s; 
-}
-
-.clean-card:hover .card-img { 
-    filter: grayscale(0%); 
-}
-
-/* =========================================
-   6. ANIMATIONS
-   ========================================= */
-.scroll-fade-up { 
-    opacity: 0; 
-    transform: translateY(50px); 
-    transition: 1s ease; 
-}
-
-.active { 
-    opacity: 1; 
-    transform: translateY(0); 
-}
-
-/* =========================================
-   7. FOOTER
-   ========================================= */
-footer { 
-    padding: 50px; 
-    text-align: center; 
-    border-top: 1px solid #333; 
-    color: #666; 
-    font-size: 0.8rem; 
-    text-transform: uppercase;
-    margin-top: 50px;
-}
+/* Animations */
+.scroll-fade-up { opacity: 0; transform: translateY(50px); transition: 1s ease; }
+.active { opacity: 1; transform: translateY(0); }
