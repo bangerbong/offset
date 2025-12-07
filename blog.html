@@ -2,39 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Blog Feed | OFF SET</title>
+    <title>Blog | OFF SET</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Strict Grid Styling */
-        .clean-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 60px 40px; /* More vertical space between rows */
-            padding-top: 40px;
-        }
-        .clean-card {
-            border: 1px solid #ddd;
-            background: #fff;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        .clean-card:hover {
-            border-color: black;
-        }
-        .clean-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-bottom: 1px solid #ddd;
-        }
-        .clean-card-body {
-            padding: 25px;
-        }
-        .category {
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #666;
+</head>
+<body>
+    <div class="noise"></div>
+    <nav>
+        <a href="index.html"><img src="logo.png" alt="OFF SET" class="nav-logo-img"></a>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="scroll-fade-up" style="font-family: 'Impact'; font-size: 4rem; margin-top: 40px;">THE ARCHIVE</h1>
+        <hr style="border: 2px solid black;">
+
+        <div class="blog-grid">
+            <div class="scroll-fade-up">
+                <a href="cover-story.html"><img src="https://placehold.co/600x800/111/fff?text=MUMBAI" class="grid-image-slot"></a>
+                <h3 style="text-transform: uppercase;">Type In Transit</h3>
+                <p>Mumbai's typography doesn't stay on paper.</p>
+                <a href="cover-story.html" style="font-weight: bold; color: var(--accent);">READ STORY</a>
+            </div>
+            <div class="scroll-fade-up" style="transition-delay: 0.1s;">
+                <img src="https://placehold.co/600x800/222/fff?text=ART" class="grid-image-slot">
+                <h3 style="text-transform: uppercase;">Contemporary Trends</h3>
+                <p>A look at the new wave of digital artists.</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>            color: #666;
             margin-bottom: 10px;
             display: block;
         }
