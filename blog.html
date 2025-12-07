@@ -4,6 +4,41 @@
     <meta charset="UTF-8">
     <title>Blog Feed | OFF SET</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Strict Grid Styling */
+        .clean-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 60px 40px; /* More vertical space between rows */
+            padding-top: 40px;
+        }
+        .clean-card {
+            border: 1px solid #ddd;
+            background: #fff;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .clean-card:hover {
+            border-color: black;
+        }
+        .clean-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+        }
+        .clean-card-body {
+            padding: 25px;
+        }
+        .category {
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 10px;
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <div class="noise"></div>
@@ -19,48 +54,55 @@
     </nav>
 
     <div class="container">
-        <h1 class="scroll-slide-left" style="font-size: 4rem; margin-top: 60px; color: black;">LATEST STORIES</h1>
-        <hr style="border: 2px solid black; margin-bottom: 40px;">
+        <h1 class="scroll-slide-left" style="font-size: 3rem; margin-top: 40px; border-bottom: 2px solid black; padding-bottom: 20px;">LATEST STORIES</h1>
 
-        <div class="blog-grid">
+        <div class="clean-grid">
             
-            <div class="blog-card scroll-fade-up" onclick="window.location.href='cover-story.html'">
-                <img src="https://placehold.co/600x400/111/fff?text=MUMBAI+TRANSIT" class="card-img">
-                <div class="card-content">
-                    <p class="meta-tag">Cover Story • 5 min read</p>
-                    <h2 style="margin: 10px 0;">Type in Transit: Where Letters Travel With Us</h2>
-                    <p style="font-size: 0.9rem;">In Mumbai, typography doesn't stay on paper. It rushes alongside buses and leans out of rickshaw flaps.</p>
-                    <div style="margin-top: 15px; font-weight: bold; color: var(--accent);">Read More &rarr;</div>
+            <div class="clean-card scroll-fade-up" onclick="window.location.href='cover-story.html'">
+                <img src="https://placehold.co/600x400/111/fff?text=MUMBAI+TRANSIT">
+                <div class="clean-card-body">
+                    <span class="category">Cover Story</span>
+                    <h2 style="font-size: 1.5rem; margin: 5px 0 15px;">Type in Transit</h2>
+                    <p style="font-size: 0.95rem; color: #444; line-height: 1.5;">
+                        In Mumbai, typography doesn't stay on paper. It rushes alongside buses and leans out of rickshaw flaps.
+                    </p>
+                    <div style="margin-top: 20px; font-weight: bold; font-size: 0.9rem;">READ ARTICLE &rarr;</div>
                 </div>
             </div>
 
-            <div class="blog-card scroll-fade-up" style="transition-delay: 0.1s;">
-                <img src="https://placehold.co/600x400/ff3c00/fff?text=MODERN+ART" class="card-img">
-                <div class="card-content">
-                    <p class="meta-tag">Interview • 3 min read</p>
-                    <h2 style="margin: 10px 0;">Exploring Contemporary Art Trends</h2>
-                    <p style="font-size: 0.9rem;">Contemporary art is a dynamic and ever-evolving field that reflects the complexities of modern society.</p>
-                    <div style="margin-top: 15px; font-weight: bold;">Read More &rarr;</div>
+            <div class="clean-card scroll-fade-up" style="transition-delay: 0.1s;">
+                <img src="https://placehold.co/600x400/222/fff?text=ART+REVIEW">
+                <div class="clean-card-body">
+                    <span class="category">Interview</span>
+                    <h2 style="font-size: 1.5rem; margin: 5px 0 15px;">Contemporary Art Trends</h2>
+                    <p style="font-size: 0.95rem; color: #444; line-height: 1.5;">
+                        Contemporary art is a dynamic and ever-evolving field that reflects the complexities of modern society.
+                    </p>
+                    <div style="margin-top: 20px; font-weight: bold; font-size: 0.9rem;">READ ARTICLE &rarr;</div>
                 </div>
             </div>
 
-            <div class="blog-card scroll-fade-up" style="transition-delay: 0.2s;">
-                <img src="https://placehold.co/600x400/blue/fff?text=DIGITAL+ERA" class="card-img">
-                <div class="card-content">
-                    <p class="meta-tag">Opinion • 4 min read</p>
-                    <h2 style="margin: 10px 0;">The Impact of Social Media on Artists</h2>
-                    <p style="font-size: 0.9rem;">Gone are the days when artists relied solely on galleries. Today, the feed is the new exhibition hall.</p>
-                    <div style="margin-top: 15px; font-weight: bold;">Read More &rarr;</div>
+            <div class="clean-card scroll-fade-up" style="transition-delay: 0.2s;">
+                <img src="https://placehold.co/600x400/333/fff?text=DIGITAL+CULTURE">
+                <div class="clean-card-body">
+                    <span class="category">Opinion</span>
+                    <h2 style="font-size: 1.5rem; margin: 5px 0 15px;">Social Media & Artists</h2>
+                    <p style="font-size: 0.95rem; color: #444; line-height: 1.5;">
+                        Gone are the days when artists relied solely on galleries. Today, the feed is the new exhibition hall.
+                    </p>
+                    <div style="margin-top: 20px; font-weight: bold; font-size: 0.9rem;">READ ARTICLE &rarr;</div>
                 </div>
             </div>
 
-            <div class="blog-card scroll-fade-up" style="transition-delay: 0.3s;">
-                <img src="https://placehold.co/600x400/green/fff?text=REVIEWS" class="card-img">
-                <div class="card-content">
-                    <p class="meta-tag">Review • 6 min read</p>
-                    <h2 style="margin: 10px 0;">Why Brutalism is Making a Comeback</h2>
-                    <p style="font-size: 0.9rem;">We explore the raw, unpolished aesthetic taking over the web design world in 2025.</p>
-                    <div style="margin-top: 15px; font-weight: bold;">Read More &rarr;</div>
+            <div class="clean-card scroll-fade-up" style="transition-delay: 0.3s;">
+                <img src="https://placehold.co/600x400/444/fff?text=DESIGN+THINKING">
+                <div class="clean-card-body">
+                    <span class="category">Design</span>
+                    <h2 style="font-size: 1.5rem; margin: 5px 0 15px;">The Return of Brutalism</h2>
+                    <p style="font-size: 0.95rem; color: #444; line-height: 1.5;">
+                        Why the raw, unpolished aesthetic is taking over the web design world in 2025.
+                    </p>
+                    <div style="margin-top: 20px; font-weight: bold; font-size: 0.9rem;">READ ARTICLE &rarr;</div>
                 </div>
             </div>
 
