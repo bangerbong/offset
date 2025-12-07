@@ -1,4 +1,6 @@
-/* style.css - THE MODERN GALLERY LOOK */
+/* =========================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================= */
 :root {
     --bg-color: #ffffff;
     --text-color: #000000;
@@ -15,9 +17,10 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-body);
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Noise Texture (Keep it subtle) */
+/* Noise Texture (Subtle Film Grain) */
 .noise {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -27,7 +30,9 @@ body {
     z-index: 999;
 }
 
-/* --- NAVIGATION (Clean & Fixed) --- */
+/* =========================================
+   2. NAVIGATION (Clean & Fixed)
+   ========================================= */
 nav {
     position: fixed;
     top: 0; width: 100%;
@@ -58,25 +63,94 @@ nav {
 
 .menu a:hover { color: var(--accent); }
 
-/* --- GLOBAL LAYOUT --- */
+/* =========================================
+   3. HOME PAGE (MAGAZINE COVER STYLE)
+   ========================================= */
+.home-hero {
+    height: 90vh; /* Takes up most of the screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 60px; /* Clears the fixed nav */
+}
+
+/* The Giant Text Behind the Image */
+.background-text {
+    font-family: 'Impact', sans-serif;
+    font-size: 25vw; /* Enormous responsive text */
+    color: #f0f0f0; /* Very light gray */
+    position: absolute;
+    z-index: 1;
+    text-transform: uppercase;
+    line-height: 0.8;
+    white-space: nowrap;
+    user-select: none;
+}
+
+/* The Floating Poster Image */
+.floating-poster {
+    width: 350px; /* Fixed width for the poster look */
+    height: 500px;
+    object-fit: cover;
+    z-index: 2; /* Sits ON TOP of the text */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3); /* Big shadow to make it float */
+    border: 1px solid black;
+    transition: transform 0.3s ease;
+}
+
+.floating-poster:hover {
+    transform: scale(1.05) rotate(-2deg); /* Subtle interaction */
+}
+
+/* The Scrolling Marquee (Ticker Tape) */
+.marquee-wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 15px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.marquee-content {
+    display: inline-block;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* =========================================
+   4. GENERAL LAYOUT & IMAGES
+   ========================================= */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 120px 20px 40px 20px; /* Top padding clears the fixed nav */
+    padding: 100px 20px 40px 20px;
 }
 
 h1, h2 {
     font-family: var(--font-head);
     text-transform: uppercase;
     margin: 0;
-    line-height: 0.9;
 }
 
-/* --- IMAGE SPACES (The "Space for Image Everywhere" feature) --- */
+/* Slots for images on other pages */
 .big-image-slot {
     width: 100%;
-    height: 70vh; /* Huge image area */
-    background-color: #eee; /* Placeholder gray */
+    height: 70vh;
+    background-color: #eee;
     object-fit: cover;
     margin: 30px 0;
     border: 2px solid black;
@@ -85,7 +159,7 @@ h1, h2 {
 
 .grid-image-slot {
     width: 100%;
-    height: 400px;
+    height: 500px; /* Tall vertical images */
     background-color: #eee;
     object-fit: cover;
     border: 2px solid black;
@@ -97,20 +171,74 @@ h1, h2 {
     filter: brightness(0.9);
 }
 
-/* --- ABOUT PAGE SPLIT (Restored) --- */
+/* =========================================
+   5. ABOUT PAGE (SPLIT LAYOUT)
+   ========================================= */
 .about-split {
     display: flex;
     flex-wrap: wrap;
     min-height: 100vh;
-    padding-top: 80px; /* Clear Nav */
+    padding-top: 60px; /* Clear Nav */
 }
 
 .about-img {
     flex: 1;
     min-width: 400px;
-    min-height: 80vh;
+    min-height: 90vh;
     background: #000;
     object-fit: cover;
+    border-right: 2px solid black;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* =========================================
+   6. CONTACT PAGE (BOLD & CENTERED)
+   ========================================= */
+.contact-hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.social-link {
+    font-size: 3rem;
+    font-family: var(--font-head);
+    color: black;
+    text-decoration: none;
+    margin: 10px 0;
+    display: block;
+    transition: 0.2s;
+}
+
+.social-link:hover { color: var(--accent); letter-spacing: 2px; }
+
+/* =========================================
+   7. BLOG GRID
+   ========================================= */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* =========================================
+   8. ANIMATIONS
+   ========================================= */
+.scroll-fade-up { opacity: 0; transform: translateY(50px); transition: 1s ease; }
+.active { opacity: 1; transform: translateY(0); }    object-fit: cover;
     border-right: 2px solid black;
 }
 
