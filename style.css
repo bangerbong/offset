@@ -1,6 +1,139 @@
-/* --- NEW STYLES FOR BLOG & ABOUT --- */
+/* =========================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================= */
+:root {
+    --bg-color: #e8e8e3;
+    --text-color: #111;
+    --accent: #ff3c00;
+    --font-head: 'Impact', 'Arial Black', sans-serif;
+    --font-body: 'Helvetica', sans-serif;
+}
 
-/* Blog Grid Layout */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+/* Noise Texture Overlay */
+.noise {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* =========================================
+   2. NAVIGATION
+   ========================================= */
+nav {
+    position: fixed;
+    top: 0; width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    z-index: 100;
+    mix-blend-mode: difference; /* This makes it visible on white OR black */
+    color: white;
+}
+
+.logo { 
+    font-family: var(--font-head); 
+    font-size: 1.5rem; 
+    text-decoration: none; 
+    color: white; 
+    text-transform: uppercase; 
+}
+
+.menu a { 
+    margin-left: 20px; 
+    text-decoration: none; 
+    color: white; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    font-size: 0.9rem;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+    color: var(--accent);
+}
+
+/* =========================================
+   3. ANIMATIONS (SCROLL TRIGGER)
+   ========================================= */
+.scroll-fade-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.scroll-slide-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1s ease-out;
+}
+
+.scroll-scale {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s ease-out;
+}
+
+/* The 'active' class triggers the animation */
+.active {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* =========================================
+   4. GENERAL LAYOUT
+   ========================================= */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.editorial-img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%) contrast(1.2);
+    transition: 0.5s;
+    margin: 40px 0;
+}
+
+.editorial-img:hover {
+    filter: grayscale(0%);
+}
+
+h1 {
+    font-family: var(--font-head);
+    font-size: 8vw;
+    line-height: 0.85;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   5. BLOG / CONTENTS PAGE STYLES
+   ========================================= */
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -41,11 +174,13 @@
     text-transform: uppercase;
 }
 
-/* About Page Layout */
+/* =========================================
+   6. ABOUT PAGE STYLES
+   ========================================= */
 .about-split {
     display: flex;
     flex-wrap: wrap;
-    min-height: 80vh;
+    min-height: 100vh;
 }
 
 .about-img-side {
@@ -73,9 +208,11 @@
     padding-left: 20px;
 }
 
-/* Contact Page Layout */
+/* =========================================
+   7. CONTACT PAGE STYLES
+   ========================================= */
 .contact-hero {
-    height: 70vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -94,3 +231,22 @@
 }
 
 .social-link:hover { color: var(--accent); letter-spacing: 2px; }
+
+/* =========================================
+   8. THE CHAOS PACK (SCATTERED IMAGES)
+   ========================================= */
+.scattered {
+    box-shadow: 10px 10px 0px rgba(0,0,0,1);
+    border: 2px solid white;
+}
+
+.tilt-left { transform: rotate(-3deg); }
+.tilt-right { transform: rotate(3deg); }
+
+footer {
+    padding: 50px;
+    border-top: 2px solid #000;
+    margin-top: 50px;
+    text-align: center;
+    font-family: var(--font-head);
+}
