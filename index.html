@@ -3,83 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OFFSET | Home</title>
+    <title>OFF SET | Visual Culture</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Specific clean styles for this page */
-        .hero-title {
-            font-size: 10vw;
-            line-height: 0.9;
-            margin-bottom: 20px;
-        }
-        .clean-image {
-            width: 100%;
-            height: auto;
-            border: 1px solid #333; /* Thin, clean border */
-            margin: 40px 0;
-            display: block;
-        }
-        .section-header {
-            border-bottom: 2px solid black;
-            padding-bottom: 20px;
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-        }
-    </style>
 </head>
 <body>
     <div class="noise"></div>
 
     <nav>
-        <a href="index.html" class="logo">Off Set</a>
+        <a href="index.html" class="logo-text">OFF SET</a>
         <div class="menu">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
-            <a href="blog.html">Blog Feed</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
         </div>
     </nav>
 
-    <header class="hero">
-        <p class="scroll-fade-up" style="font-weight: bold; margin-bottom: 10px;">VOL. 01 — SEPTEMBER ISSUE</p>
-        <h1 class="parallax-text hero-title">VISUAL<br>CULTURE</h1>
-        <div class="scroll-fade-up" style="margin-top: 30px;">
-            <a href="blog.html" style="color: black; text-decoration: none; border-bottom: 2px solid black; padding-bottom: 5px; font-weight: bold;">EXPLORE THE ISSUE</a>
+    <header class="hero-fullscreen">
+        <div class="hero-overlay"></div>
+        
+        <img src="logo.png" alt="OFF SET LOGO" class="hero-logo-img scroll-fade-up">
+        
+        <p class="scroll-fade-up" style="z-index: 2; margin-top: 30px; font-size: 1.2rem; letter-spacing: 4px; font-weight: bold; color: white;">
+            ISSUE 01 : VISUAL NOISE
+        </p>
+
+        <div style="position: absolute; bottom: 40px; z-index: 2; color: white; font-size: 2rem; animation: bounce 2s infinite;">
+            &darr;
         </div>
     </header>
 
     <div class="container">
         
-        <h2 class="section-header scroll-slide-left">Featured Stories</h2>
+        <h2 class="scroll-fade-up">Trending Now</h2>
 
-        <img src="https://placehold.co/1000x600/111/fff?text=MODERN+DESIGN" 
-             class="clean-image scroll-fade-up">
+        <div style="margin-bottom: 80px;" class="scroll-fade-up">
+            <a href="cover-story.html">
+                <img src="https://placehold.co/1000x600/222/fff?text=FEATURED+STORY" class="card-img" style="height: 500px;">
+            </a>
+            <h3 style="font-size: 2.5rem; margin-top: 20px; font-family: 'Impact', sans-serif; text-transform: uppercase; color: white;">
+                <a href="cover-story.html" style="color: white; text-decoration: none;">Type in Transit: Mumbai</a>
+            </h3>
+            <p style="font-size: 1.2rem; color: #aaa; margin-top: 10px; line-height: 1.6;">
+                Typography doesn't stay on paper. It rushes alongside buses, rickshaws, and trains. Read the full cover story.
+            </p>
+        </div>
 
-        <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
-            <div style="flex: 1; min-width: 300px;">
-                <h3 style="font-size: 2rem; margin-bottom: 20px;">The New Standard</h3>
-                <p style="font-size: 1.2rem; line-height: 1.6;">
-                    Design is moving towards clarity and purpose. We explore how modern typography creates meaning without the need for excess decoration.
-                </p>
+        <div class="clean-grid">
+            
+            <div class="clean-card scroll-fade-up">
+                <a href="blog.html"><img src="https://placehold.co/400x500/333/fff?text=ART" class="card-img"></a>
+                <h4 style="font-size: 1.5rem; margin: 15px 0; color: white;">Digital Brutalism</h4>
+                <a href="blog.html" style="color: var(--accent); text-transform: uppercase; font-weight: bold; text-decoration: none; letter-spacing: 1px;">Read More</a>
             </div>
-            <div style="flex: 1; min-width: 300px;">
-                <img src="https://placehold.co/600x400/333/fff?text=MINIMALISM" 
-                     class="clean-image scroll-scale">
+            
+            <div class="clean-card scroll-fade-up" style="transition-delay: 0.1s;">
+                <a href="blog.html"><img src="https://placehold.co/400x500/444/fff?text=FASHION" class="card-img"></a>
+                <h4 style="font-size: 1.5rem; margin: 15px 0; color: white;">New Wave Fashion</h4>
+                <a href="blog.html" style="color: var(--accent); text-transform: uppercase; font-weight: bold; text-decoration: none; letter-spacing: 1px;">Read More</a>
             </div>
+
+             <div class="clean-card scroll-fade-up" style="transition-delay: 0.2s;">
+                <a href="blog.html"><img src="https://placehold.co/400x500/555/fff?text=CULTURE" class="card-img"></a>
+                <h4 style="font-size: 1.5rem; margin: 15px 0; color: white;">Underground Scenes</h4>
+                <a href="blog.html" style="color: var(--accent); text-transform: uppercase; font-weight: bold; text-decoration: none; letter-spacing: 1px;">Read More</a>
+            </div>
+
         </div>
 
         <div style="text-align: center; margin-top: 80px;">
-            <h2 style="font-size: 3rem; margin-bottom: 40px;">LATEST READS</h2>
-            <a href="blog.html" style="background: black; color: white; padding: 15px 40px; text-decoration: none; font-weight: bold; text-transform: uppercase;">View All Articles</a>
+            <a href="blog.html" class="scroll-fade-up" style="border: 2px solid white; color: white; padding: 15px 40px; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; display: inline-block;">
+                View All Stories
+            </a>
         </div>
 
     </div>
-    
+
     <footer>
-        <span class="scroll-fade-up">© 2025 OFF SET MAGAZINE</span>
+        &copy; 2025 OFF SET MAGAZINE.
     </footer>
 
     <script src="script.js"></script>
+    
+    <style>
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+    </style>
 </body>
 </html>
